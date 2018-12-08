@@ -13,11 +13,41 @@ $(document).ready(function() {
 
   var database = firebase.database();
 
+  database.ref().on("value", function(snapshot) {
+    var sv = snapshot.val();
+    console.table(sv);
+
+    var name = $("<td>").text(sv.name);
+    var destination = $("<td>").text(sv.destination);
+    var time = $("<td>").text(sv.time);
+    var frequency = $("<td>").text(sv.frequency);
+    var nextArrival = $("<td>").text("12:15");
+    var minutesAway = $("<td>").text("15");
+    var newRow = $("<tr>");
+
+    $("tbody").append(newRow);
+    newRow.append(name);
+    newRow.append(destination);
+    newRow.append(time);
+    newRow.append(frequency);
+    newRow.append(nextArrival);
+    newRow.append(minutesAway);
+  })
+
 
   $(".btn").on("click", function(event){
 
     event.preventDefault();
 
+    database.ref().push({
+      name: $("#train-input").val().trim(),
+      destination: $("#destination-input").val().trim(),
+      time: $("#time-input").val().trim(),
+      frequency: $("#frequency-input").val().trim(),
+      nextArrival: "12:00",
+      minutesAway: "15",
+      dateAdded: firebase.database.ServerValue.TIMESTAMP
+    })
     //assign variables to each input field on the DOM
 
     // capture the click 
