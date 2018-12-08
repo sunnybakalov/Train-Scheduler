@@ -17,6 +17,14 @@ $(document).ready(function() {
   $(".btn").on("click", function(event){
 
     event.preventDefault();
+
+    //assign variables to each input field on the DOM
+
+    // capture the click 
+    // dynamically add a new table row
+      //make sure that the each input field by the user goes into the right column.
+    // create variable that captures the user’s input with .val.trim 
+    // database.ref().set({})
   })
 
 });
