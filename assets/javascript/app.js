@@ -35,11 +35,14 @@ $(document).ready(function() {
   // })
 
 
+  // capture the click
   $(".btn").on("click", function(event){
 
     event.preventDefault();
 
     database.ref().push({
+      //assign variables to each input field on the DOM
+      //create variable that captures the user’s input with .val.trim 
       name: $("#train-input").val().trim(),
       destination: $("#destination-input").val().trim(),
       time: $("#time-input").val().trim(),
@@ -48,12 +51,7 @@ $(document).ready(function() {
       minutesAway: "15",
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     })
-    //assign variables to each input field on the DOM
-
-    // capture the click 
-    // dynamically add a new table row
-      //make sure that the each input field by the user goes into the right column.
-    // create variable that captures the user’s input with .val.trim 
+     
     // database.ref().set({})
   })
 
@@ -70,6 +68,7 @@ $(document).ready(function() {
     var minutesAway = $("<td>").text("15");
     var newRow = $("<tr>");
 
+    // dynamically add a new table row
     $("tbody").append(newRow);
     newRow.append(name);
     newRow.append(destination);
