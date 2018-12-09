@@ -13,26 +13,26 @@ $(document).ready(function() {
 
   var database = firebase.database();
 
-  database.ref().on("value", function(snapshot) {
-    var sv = snapshot.val();
-    console.table(sv);
+  // database.ref().on("value", function(snapshot) {
+    // var sv = snapshot.val();
+    // console.table(sv);
 
-    var name = $("<td>").text(sv.name);
-    var destination = $("<td>").text(sv.destination);
-    // var time = $("<td>").text(sv.time);
-    var frequency = $("<td>").text(sv.frequency);
-    var nextArrival = $("<td>").text("12:15");
-    var minutesAway = $("<td>").text("15");
-    var newRow = $("<tr>");
+    // var name = $("<td>").text(sv.name);
+    // var destination = $("<td>").text(sv.destination);
+    // // var time = $("<td>").text(sv.time);
+    // var frequency = $("<td>").text(sv.frequency);
+    // var nextArrival = $("<td>").text("12:15");
+    // var minutesAway = $("<td>").text("15");
+    // var newRow = $("<tr>");
 
-    $("tbody").append(newRow);
-    newRow.append(name);
-    newRow.append(destination);
+    // $("tbody").append(newRow);
+    // newRow.append(name);
+    // newRow.append(destination);
     // newRow.append(time);
-    newRow.append(frequency);
-    newRow.append(nextArrival);
-    newRow.append(minutesAway);
-  })
+    // newRow.append(frequency);
+    // newRow.append(nextArrival);
+    // newRow.append(minutesAway);
+  // })
 
 
   $(".btn").on("click", function(event){
