@@ -1,5 +1,7 @@
 $(document).ready(function() {
 
+  var currentTime = new moment().format("HH:mm");
+  console.log(currentTime);
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDDF-a8rXgtAlEtQ66RgZc732LcRUGaDYY",
@@ -52,7 +54,6 @@ $(document).ready(function() {
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     })
      
-    // database.ref().set({})
   })
 
   database.ref().orderByChild("dateAdded").on("child_added", function(snapshot) {
