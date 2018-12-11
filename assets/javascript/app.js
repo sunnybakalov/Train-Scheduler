@@ -1,7 +1,9 @@
 $(document).ready(function() {
 
+  //variable that obtains the current time
   var currentTime = new moment().format("HH:mm");
   console.log(currentTime);
+
   // Initialize Firebase
   var config = {
     apiKey: "AIzaSyDDF-a8rXgtAlEtQ66RgZc732LcRUGaDYY",
@@ -53,6 +55,11 @@ $(document).ready(function() {
       minutesAway: "15",
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     })
+
+    $("#train-input").val("");
+    $("#destination-input").val("");
+    $("#time-input").val("");
+    $("#frequency-input").val("");
      
   })
 
