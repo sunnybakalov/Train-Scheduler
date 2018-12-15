@@ -3,7 +3,8 @@ body {
     background: #435058;
 }
 
-.jumbotron {
+.jumbotron,
+.btn {
     background: #6D8EA0;
 }
 
