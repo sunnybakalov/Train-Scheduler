@@ -34,6 +34,7 @@ $(document).ready(function() {
       dateAdded: firebase.database.ServerValue.TIMESTAMP
     })
 
+    //empties out the inputs after the user submits a new train
     $("#train-input").val("");
     $("#destination-input").val("");
     $("#time-input").val("");
@@ -53,6 +54,25 @@ $(document).ready(function() {
     var nextArrival = $("<td>").text("12:15");
     var minutesAway = $("<td>").text("15");
     var newRow = $("<tr>");
+
+    var firstTrain = $("#time-input").val().trim();
+
+    // var firstTrainUnix = moment.unix(firstTrain).format("HH:mm");
+
+    // console.log(firstTrainUnix);
+
+    // var firstTrainConverted = moment(firstTrainUnix, "hh:mm").subtract(1, "years");
+
+    // var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
+
+    // var remainder = diffTime % frequency;
+
+    // var howFarAway = frequency - remainder;
+
+    // console.log(howFarAway);
+
+    // var nextTrain = moment().add(howFarAway, "minutes").format("HH:mm");
+    // console.log(nextTrain);
 
     // dynamically add a new table row
     $("tbody").append(newRow);
