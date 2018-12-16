@@ -13,6 +13,7 @@ $(document).ready(function() {
     storageBucket: "train-scheduler-eab30.appspot.com",
     messagingSenderId: "91964813880"
   };
+ 
   firebase.initializeApp(config);
 
   var database = firebase.database();
@@ -50,37 +51,41 @@ $(document).ready(function() {
     var name = $("<td>").text(sv.name);
     var destination = $("<td>").text(sv.destination);
     // var time = $("<td>").text(sv.time);
-    var frequency = $("<td>").text(sv.frequency);
-    var nextArrival = $("<td>").text("12:15");
-    var minutesAway = $("<td>").text("15");
+
+    var frequency = parseInt(sv.frequency);
+    // var nextArrival = $("<td>").text("12:15");
+    // var minutesAway = $("<td>").text("15");
     var newRow = $("<tr>");
 
-    var firstTrain = $("#time-input").val().trim();
+    var firstTrain = sv.time
+    // <td>18:02</td>
 
     // var firstTrainUnix = moment.unix(firstTrain).format("HH:mm");
 
-    // console.log(firstTrainUnix);
+    //console.log(firstTrainUnix);
 
-    // var firstTrainConverted = moment(firstTrainUnix, "hh:mm").subtract(1, "years");
+    var firstTrainConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
 
-    // var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
+    var diffTime = moment().diff(moment(firstTrainConverted), "minutes");
 
-    // var remainder = diffTime % frequency;
+    var remainder = diffTime % frequency;
 
-    // var howFarAway = frequency - remainder;
+    var howFarAway = frequency - remainder;
 
-    // console.log(howFarAway);
+    console.log(howFarAway);
 
-    // var nextTrain = moment().add(howFarAway, "minutes").format("HH:mm");
-    // console.log(nextTrain);
+    var nextTrain = moment().add(howFarAway, "minutes").format("HH:mm");
+    
+    console.log(nextTrain, "next train");
+
 
     // dynamically add a new table row
     $("tbody").append(newRow);
     newRow.append(name);
     newRow.append(destination);
     // newRow.append(time);
-    newRow.append(frequency);
-    newRow.append(nextArrival);
-    newRow.append(minutesAway);
+    newRow.append($("<td>").text(frequency));
+    newRow.append(nextTrain);
+    newRow.append($("<td>").text(howFarAway));
   });
 });
