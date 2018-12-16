@@ -50,19 +50,10 @@ $(document).ready(function() {
 
     var name = $("<td>").text(sv.name);
     var destination = $("<td>").text(sv.destination);
-    // var time = $("<td>").text(sv.time);
-
     var frequency = parseInt(sv.frequency);
-    // var nextArrival = $("<td>").text("12:15");
-    // var minutesAway = $("<td>").text("15");
     var newRow = $("<tr>");
 
     var firstTrain = sv.time
-    // <td>18:02</td>
-
-    // var firstTrainUnix = moment.unix(firstTrain).format("HH:mm");
-
-    //console.log(firstTrainUnix);
 
     var firstTrainConverted = moment(firstTrain, "hh:mm").subtract(1, "years");
 

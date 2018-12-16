@@ -1,15 +1,19 @@
 body {
     padding: 1rem;
-    background: #435058;
+    background: #808D8E;
 }
 
-.jumbotron,
+.jumbotron {
+    background: #A9D2D5;
+}
+
 .btn {
-    background: #6D8EA0;
+    background: #A9D2D5;
+    color: grey;
 }
 
 .form-control {
-    background: #b4c5cf;
+    background: #EAF0CE;
 }
 
 .display-4,
