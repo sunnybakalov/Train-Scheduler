@@ -1,9 +1,28 @@
-# Train-Scheduler
+# Train Scheduler
 
-This app uses Moment.js to calculate train arrival times.
+<p align="center">
+<img align="center" src="/assets/images/giphy.gif" width="100%"/>
+</p>
 
-You can enter in the train name, the destination, the first train time, and the frequency in which the train comes.
+## SUMMARY
+This app helps the user calculate the next train time for their favorite train so that they do not miss their train!
 
-Once you click the submit the information, the train is added to the table.
+## GOALS
 
-The app then uses the first train time that the user entered to calculate when the next arrival is, and how many minutes away the train is.
+* Allow the user to enter in a train with some basic information: the destination, the first train time, & the frequency.
+* Utilize moment.js to calculate when the next train will be arriving.
+* Store the information for the train that the user entered in Firebase so that the data is not lost.
+
+
+## DESIGN PROCESS
+* Used Bootstrap to create a simple yet intuitive front end.
+* Used Firebase to initialize database storage.
+* Allowed the user to append new trains to the table on the webpage.
+
+
+## TECHNOLOGY USED
+
+* Google Firebase
+* Moment.js
+* jQuery
+* Bootstrap
